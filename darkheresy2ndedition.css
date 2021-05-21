@@ -1019,7 +1019,7 @@ input:focus, textarea:focus
     line-height: 24px;
     vertical-align: middle;
 	float: none;
-	}
+}
 	
 [class*="span"] {
     float: none;

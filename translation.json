@@ -621,5 +621,11 @@
    "peer-u":"Peer: ",
    "enemies-u":"Enemies",
    "enemy-u":"Enemy: ",
-   "scatter-diagram-u":"Scatter Diagram"
+   "scatter-diagram-u":"Scatter Diagram",
+   "info-u":"info",
+   "power-modifier-u":"Power modifier:",
+   "energy-u":"Energy",
+   "impact-u":"Impact",
+   "rending-u":"Rending",
+   "explosive-u":"Explosive"
 }

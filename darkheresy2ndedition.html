@@ -2708,13 +2708,13 @@
 					<input name="attr_advancementRe2" type="text">
 				</div>
 				<div class="sheet-item sheet-puny sheet-center sheet-brackets sheet-armourblock">
-					<input name="attr_advancementRe2xp" type="text" value="0">
+					<input name="attr_advancement2Rexp" type="text" value="0">
 				</div>
 				<div class="sheet-item" style="width:26%;">
 					<input name="attr_advancementRe3" type="text">
 				</div>
 				<div class="sheet-item sheet-puny sheet-center sheet-brackets sheet-armourblock">
-					<input name="attr_advancementRe3xp" type="text" value="0">
+					<input name="attr_advancement3Rexp" type="text" value="0">
 				</div>
 			</div>
 		</fieldset>
@@ -3319,8 +3319,8 @@
 							</div>
 							<div class="sheet-row">
 								<div class="sheet-item" style="width: 15%;"><span data-i18n="special-u">Special:</span></div>
-								<div class="sheet-item" style="width: 75%;"><input name="attr_NPC2Rangedweaponspecial" type="text" /></div>
-								<div class="sheet-item sheet-redbgns" style="width: 10%;"><button name="roll_NPC2Rangedhit" type="roll" value="!roll40k @{NPCName}, @{NPCBS}, [[(?{Aim | Half aim (+10),+10| No aim (+0),+0 | Full aim (+20),+20} + ?{Range | Point Blank (+30),+30 | Short Range (+10),+10 | Standard range (+0),+0 | Long Range (-10),-10 | Extreme Range (-30),-30} + ?{Rate of Fire/Attack Type|Standard (+10),+10 | Semi auto (+0),+0 | Full Auto (-10),-10 | Called Shot (-20),-20 | Suppressing Fire (-20),-20} + ?{Modifier|0})]]"> <span data-i18n="hit-u">Hit</span> </button></div>
+								<div class="sheet-item" style="width: 69%;"><input name="attr_NPC2Rangedweaponspecial" type="text" /></div>
+								<div class="sheet-item sheet-redbgns" style="width: 16%;"><button name="roll_NPC2Rangedhit" type="roll" value="!roll40k @{NPCName}, @{NPCBS}, [[(?{Aim | Half aim (+10),+10| No aim (+0),+0 | Full aim (+20),+20} + ?{Range | Point Blank (+30),+30 | Short Range (+10),+10 | Standard range (+0),+0 | Long Range (-10),-10 | Extreme Range (-30),-30} + ?{Rate of Fire/Attack Type|Standard (+10),+10 | Semi auto (+0),+0 | Full Auto (-10),-10 | Called Shot (-20),-20 | Suppressing Fire (-20),-20} + ?{Modifier|0})]]"> <span data-i18n="hit-u">Hit</span> </button></div>
 							</div>
 						</div>
 					</div>
@@ -3431,13 +3431,13 @@
 		<div class="sheet-row">
 			<div class="sheet-item sheet-DHBtn" style="width: 33%; text-align: center; "><button name="roll_Willpower" type="roll" value="!roll40k @{character_name}'s channelled Willpower, @{Willpower},[[(@{PsyRating} - ?{Psy Use?|1}) *10 + ?{Modifier|0}]]"> <span data-i18n="willpower">Willpower</span> </button></div>
 			<div class="sheet-item sheet-DHBtn" style="width: 33%; text-align: center;"><button name="roll_Perception" type="roll" value="!roll40k @{character_name}'s channelled Perception, @{Perception},[[(@{PsyRating} - ?{Psy Use?|1}) *10 + ?{Modifier|0}]]"> <span data-i18n="perception-u">Perception</span> </button></div>
-			<div class="sheet-item sheet-DHBtn" style="width: 33%; text-align: center;"><button name="roll_PsyniscienceCharacteristic" type="roll" value="!roll40k @{character_name}'s channelled Perception, @{PsyniscienceCharacteristic},[[(@{PsyRating} - ?{Psy Use?|1}) *10 + ?{Modifier|0}]]"> <span data-i18n="psyniscience-u">Psyniscience</span> </button></div>
+			<div class="sheet-item sheet-DHBtn" style="width: 33%; text-align: center;"><button name="roll_PsyniscienceCharacteristic" type="roll" value="!roll40k @{character_name}'s channelled Psyniscience, @{PsyniscienceCharacteristic},[[(@{PsyRating} - ?{Psy Use?|1}) *10 + ?{Modifier|0} + @{Psyniscience1} + @{Psyniscience2} + @{Psyniscience3} + @{Psyniscience4}]]"> <span data-i18n="psyniscience-u">Psyniscience</span> </button></div>
+
 		</div>
 		<br>
 		<img src="http://i.imgur.com/TKfHnQ9.png"><!-- Divider  -->
 		<h3 data-i18n="psychic-powers-u">Psychic Powers</h3>
 		<div class="sheet-2colrow">
-			<!-- Psychic Powers Left Column -->
 			<div class="sheet-col">
 				<div class="sheet-row">
 					<div class="sheet-item" style="width: 50px;"><span data-i18n="class-u">Class:</span></div>
@@ -3451,51 +3451,7 @@
 					<div class="sheet-item" style="width: 85px; margin-left: 20px"><span data-i18n="psy-rating-u">Psy Rating:</span></div>
 					<div class="sheet-item" style="width: 50px;"><input name="attr_PsyRating" type="number" data-i18n-placeholder="zero-u" placeholder="0" /></div>
 				</div>
-				<!-- Psychic Powers Left Column, repeating field -->
-				<fieldset class="repeating_PsyPowers">
-					<div class="sheet-quickborder">
-						<div class="sheet-row">
-							<div class="sheet-item" style="width: 10%;"><span data-i18n="name-u">Name:</span></div>
-							<div class="sheet-item" style="width: 50%;"><input name="attr_PsyName" type="text" /></div>
-							<div class="sheet-item" style="width: 12%;"><span data-i18n="action-u">Action:</span></div>
-							<div class="sheet-item" style="width: 28%;"><input name="attr_PsyAction" type="text" /></div>
-
-						</div>
-						<div class="sheet-row">
-							<div class="sheet-item" style="width: 22%;"><span data-i18n="focus-power-u">Focus Power:</span></div>
-							<div class="sheet-item" style="width: 28%;"><input name="attr_PsyFocusPower" type="text" /></div>
-							<div class="sheet-item" style="width: 15%;;"><span data-i18n="subtype-u">Subtype:</span></div>
-							<div class="sheet-item" style="width: 35%;"><input name="attr_PsySubtype" type="text" /></div>
-						</div>
-						<div class="sheet-row">
-							<div class="sheet-item" style="width: 10%;"><span data-i18n="range-u">Range:</span></div>
-							<div class="sheet-item" style="width: 19%;"><input name="attr_PsyRange" type="text" /></div>
-							<div class="sheet-item" style="width: 17%;;"><span data-i18n="sustained-u">Sustained:</span></div>
-							<div class="sheet-item" style="width: 19%;"><input name="attr_PsySustained" type="text" /></div>
-							<div class="sheet-item" style="width: 24%;"><span data-i18n="damage-type-u">Damage Type:</span></div>
-							<div class="sheet-item" style="width: 10%;">
-								<select class="attr_PsyDamageType">
-									<option selected data-i18n="e-u">E</option>
-									<option data-i18n="i-u">I</option>
-									<option data-i18n="r-u">R</option>
-									<option data-i18n="e-u">E</option>
-								</select>
-							</div>
-						</div>
-						<div class="sheet-row">
-							<div class="sheet-item" style="width: 15%;"><span data-i18n="damage-u">Damage:</span></div>
-							<div class="sheet-item" style="width: 23%;"><input name="attr_PsyDamage" type="text" /></div>
-							<div class="sheet-item" style="width: 7%;"><span data-i18n="penetration-u">Pen:</span></div>
-							<div class="sheet-item" style="width: 23%;"><input name="attr_PsyPen" type="text" /></div>
-							<div class="sheet-item sheet-redbgns" style="width: 17%;"><button name="roll_PsyDamage" type="roll" value="/me does [[@{PsyDamage}]] damage! (Pen: @{PsyPen})"> <span data-i18n="damage-u">Damage</span> </button></div>
-							<div class="sheet-item sheet-redbgns" style="width: 15%;"><button name="roll_PsyHit" type="roll" value="!roll40k @{character_name}, ?{Focus Power Characteristic | Willpower,@{Willpower} | Perception,@{Perception} | Psyniscience,@{PsyniscienceCharacteristic}},  [[(@{PsyRating} - ?{Psy Use?|1}) *10 + ?{Modifier|0}]]"> <span data-i18n="hit-u">Hit</span> </button></div>
-						</div>
-						<div><textarea name="attr_PsyPowersEffectRe"></textarea></div>
-					</div>
-				</fieldset>
 			</div>
-			<!-- Break between Left and Right Secondary Columns -->
-			<!-- Psychic Powers Right Column -->
 			<div class="sheet-col">
 				<div class="sheet-row">
 					<div class="sheet-item" style="width: 20%;"><span data-i18n="max-push-u">Max Push:</span></div>
@@ -3503,52 +3459,52 @@
 					<div class="sheet-item" style="width: 20%;"><span data-i18n="sustaining-u">Sustaining:</span></div>
 					<div class="sheet-item" style="width: 45%;"><input name="attr_Sustaining" type="number" data-i18n-placeholder="+10-psychic-phenomena-u" placeholder="+10 PP / -1 PR"/></div>
 				</div>
-				<!-- Psychic Powers Right Column, repeating field  -->
-				<fieldset class="repeating_PsyPowers">
-					<div class="sheet-quickborder">
-						<div class="sheet-row">
-							<div class="sheet-item" style="width: 10%;"><span data-i18n="name-u">Name:</span></div>
-							<div class="sheet-item" style="width: 50%;"><input name="attr_PsyNameRi" type="text" /></div>
-							<div class="sheet-item" style="width: 12%;"><span data-i18n="action-u">Action:</span></div>
-							<div class="sheet-item" style="width: 28%;"><input name="attr_PsyActionRi" type="text" /></div>
-
-						</div>
-						<div class="sheet-row">
-							<div class="sheet-item" style="width: 22%;"><span data-i18n="focus-power-u">Focus Power:</span></div>
-							<div class="sheet-item" style="width: 28%;"><input name="attr_PsyFocusPowerRi" type="text" /></div>
-							<div class="sheet-item" style="width: 15%;;"><span data-i18n="subtype-u">Subtype:</span></div>
-							<div class="sheet-item" style="width: 35%;"><input name="attr_PsySubtypeRi" type="text" /></div>
-						</div>
-						<div class="sheet-row">
-							<div class="sheet-item" style="width: 10%;"><span data-i18n="range-u">Range:</span></div>
-							<div class="sheet-item" style="width: 19%;"><input name="attr_PsyRangeRi" type="text" /></div>
-							<div class="sheet-item" style="width: 17%;;"><span data-i18n="sustained-u">Sustained:</span></div>
-							<div class="sheet-item" style="width: 19%;"><input name="attr_PsySustainedRi" type="text" /></div>
-							<div class="sheet-item" style="width: 24%;"><span data-i18n="damage-type-u">Damage Type:</span></div>
-							<div class="sheet-item" style="width: 10%;">
-								<select class="attr_PsyDamageType2">
-									<option selected data-i18n="e-u">E</option>
-									<option data-i18n="i-u">I</option>
-									<option data-i18n="r-u">R</option>
-									<option data-i18n="e-u">E</option>
-								</select>
-							</div>
-						</div>
-						<div class="sheet-row">
-							<div class="sheet-item" style="width: 15%;"><span data-i18n="damage-u">Damage:</span></div>
-							<div class="sheet-item" style="width: 23%;"><input name="attr_PsyPowerDamageRi" type="text" /></div>
-							<div class="sheet-item" style="width: 7%;"><span data-i18n="penetration-u">Pen:</span></div>
-							<div class="sheet-item" style="width: 23%;"><input name="attr_PsyPenRi" type="text" /></div>
-							<div class="sheet-item sheet-redbgns" style="width: 17%;"><button name="roll_PsyDamageRi" type="roll" value="/me does [[@{PsyPowerDamageRi}]] damage! (Pen: @{PsyPenRi})"> <span data-i18n="damage-u">Damage</span> </button></div>
-							<div class="sheet-item sheet-redbgns" style="width: 15%;"><button name="roll_PsyHitRi" type="roll" value="!roll40k @{character_name}, ?{Focus Power Characteristic | Willpower,@{Willpower} | Perception,@{Perception} | Psyniscience,@{PsyniscienceCharacteristic}},  [[(@{PsyRating} - ?{Psy Use?|1}) *10 + ?{Modifier|0}]]"> <span data-i18n="hit-u">Hit</span> </button></div>
-						</div>
-						<div>
-							<textarea name="attr_PsyPowersEffectRI"></textarea>
+			</div>
+		</div>
+		<div class="sheet-1colrow">
+			<fieldset class="repeating_PsyPowers">
+				<div class="sheet-quickborder">
+					<div class="sheet-row">
+						<div class="sheet-item" style="width: 8%;"><span data-i18n="name-u">Name:</span></div>
+						<div class="sheet-item" style="width: 20%;"><input name="attr_PsyName" type="text" /></div>
+						<div class="sheet-item" style="width: 10%;"><span data-i18n="action-u">Action:</span></div>
+						<div class="sheet-item" style="width: 28%;"><input name="attr_PsyAction" type="text" /></div>
+						<div class="sheet-item" style="width: 19%;"><span data-i18n="power-modifier-u">Power modifier:</span></div>
+						<div class="sheet-item" style="width: 15%;"><input name="attr_PsyPowerModifier" type="number" value="0" /></div>
+					</div>
+					<div class="sheet-row">
+						<div class="sheet-item" style="width: 22%;"><span data-i18n="focus-power-u">Focus Power:</span></div>
+						<div class="sheet-item" style="width: 28%;"><input name="attr_PsyFocusPower" type="text" /></div>
+						<div class="sheet-item" style="width: 15%;;"><span data-i18n="subtype-u">Subtype:</span></div>
+						<div class="sheet-item" style="width: 35%;"><input name="attr_PsySubtype" type="text" /></div>
+					</div>
+					<div class="sheet-row">
+						<div class="sheet-item" style="width: 10%;"><span data-i18n="range-u">Range:</span></div>
+						<div class="sheet-item" style="width: 19%;"><input name="attr_PsyRange" type="text" /></div>
+						<div class="sheet-item" style="width: 17%;;"><span data-i18n="sustained-u">Sustained:</span></div>
+						<div class="sheet-item" style="width: 19%;"><input name="attr_PsySustained" type="text" /></div>
+						<div class="sheet-item" style="width: 24%;"><span data-i18n="damage-type-u">Damage Type:</span></div>
+						<div class="sheet-item" style="width: 10%;">
+							<select class="attr_PsyDamageType" name="attr_PsyDamageType">
+								<option value="energy" selected data-i18n="energy-u">Energy</option>
+								<option value="impact" data-i18n="impact-u">Impact</option>
+								<option value="rending" data-i18n="rending-u">Rending</option>
+								<option value="explosive" data-i18n="explosive-u">Explosive</option>
+							</select>
 						</div>
 					</div>
-				</fieldset>
-			</div>
-
+					<div class="sheet-row">
+						<div class="sheet-item" style="width: 15%;"><span data-i18n="damage-u">Damage:</span></div>
+						<div class="sheet-item" style="width: 23%;"><input name="attr_PsyDamage" type="text" /></div>
+						<div class="sheet-item" style="width: 7%;"><span data-i18n="penetration-u">Pen:</span></div>
+						<div class="sheet-item" style="width: 23%;"><input name="attr_PsyPen" type="text" /></div>
+						<div class="sheet-item sheet-redbgns" style="width: 12%;"><button name="roll_PsyHit" type="roll" value="!roll40k @{character_name}, ?{Focus Power Characteristic | Willpower,@{Willpower} | Perception,@{Perception} | Psyniscience,@{PsyniscienceCharacteristic}}, [[(@{PsyRating} - ?{Psy Use?|1}) *10 + ?{Modifier|0} + @{PsyPowerModifier}]]"> <span data-i18n="hit-u">Hit</span> </button></div>
+						<div class="sheet-item sheet-redbgns" style="width: 12%;"><button name="roll_PsyDamage" type="roll" value="/me does [[@{PsyDamage}]] @{PsyDamageType} damage! (Pen: @{PsyPen})"> <span data-i18n="damage-u">Damage</span> </button></div>
+						<div class="sheet-item sheet-redbgns" style="width: 8%;"><button name="roll_PsyInfo" type="roll" value="&{template:default} {{name=@{PsyName}}} {{Action=@{PsyAction}}} {{SubType(s)=@{PsySubtype}}} {{Range=@{PsyRange}}} {{F. Power=@{PsyFocusPower}}} {{D. type=@{PsyDamageType}}} {{Sustained?=@{PsySustained}}} {{Effect=@{PsyPowersEffect}}}"> <span data-i18n="info-u">Info</span> </button></div>
+					</div>
+					<div><textarea name="attr_PsyPowersEffect"></textarea></div>
+				</div>
+			</fieldset>
 		</div>
 	</div>
 </div>
@@ -3608,14 +3564,14 @@
 							<div class="sheet-item" style="width: 6%;"><input name="attr_Rangedweaponclip_max" type="text" value="0" /></div>
 							<div class="sheet-item" style="width: 15%;"><span data-i18n="reload-u">Reload:</span></div>
 							<div class="sheet-item" style="width: 18%;"><input name="attr_Rangedweaponreload" type="text" /></div>
-							<div class="sheet-item sheet-redbgns" style="width: 15%;"><button name="roll_Rangeddamage" type="roll" value="/me does [[@{Rangedweapondamage}]] damage! (Pen: @{Rangedweaponpen}) with @{Rangedweaponname}"> <span data-i18n="damage-u">Damage</span> </button></div>
+							<div class="sheet-item sheet-redbgns" style="width: 15%;"><button name="roll_Rangedhit" type="roll" value="***@{character_name} fires @{rangedweaponname}!***
+!roll40k @{character_name}, @{BallisticSkill}, [[(?{Aim | Half aim (+10),+10| No aim (+0),+0 | Full aim (+20),+20} + ?{Range | Point Blank (+30),+30 | Short Range (+10),+10 | Standard range (+0),+0 | Long Range (-10),-10 | Extreme Range (-30),-30} + ?{Rate of Fire/Attack Type|Standard (+10),+10 | Semi auto (+0),+0 | Full Auto (-10),-10 | Called Shot (-20),-20 | Suppressing Fire (-20),-20} + ?{Modifier|0})]]
+!ammo @{character_id} repeating_Rangedweapons_@{my_hidden_row_id}_Rangedweaponclip [[?{Ammo?|Single,-1|Semi-Auto,-@{Rangedweaponsemi}|Full Auto,-@{Rangedweaponfull}}*?{Firing Mode?|Normal,1|Overcharge,2|Maximal,3|Overload,4}]]"> <span data-i18n="hit-u">Hit</span> </button></div>
 						</div>
 						<div class="sheet-row">
 							<div class="sheet-item" style="width: 15%;"><span data-i18n="special-u">Special:</span></div>
-							<div class="sheet-item" style="width: 76%;"><input name="attr_Rangedweaponspecial" type="text" /></div>
-							<div class="sheet-item sheet-redbgns" style="width: 9%;"><button name="roll_Rangedhit" type="roll" value="***@{character_name} fires @{rangedweaponname}!***
-!roll40k @{character_name}, @{BallisticSkill}, [[(?{Aim | Half aim (+10),+10| No aim (+0),+0 | Full aim (+20),+20} + ?{Range | Point Blank (+30),+30 | Short Range (+10),+10 | Standard range (+0),+0 | Long Range (-10),-10 | Extreme Range (-30),-30} + ?{Rate of Fire/Attack Type|Standard (+10),+10 | Semi auto (+0),+0 | Full Auto (-10),-10 | Called Shot (-20),-20 | Suppressing Fire (-20),-20} + ?{Modifier|0})]]
-!ammo @{character_id} repeating_Rangedweapons_@{my_hidden_row_id}_Rangedweaponclip [[?{Ammo?|Single,-1|Semi-Auto,-@{Rangedweaponsemi}|Full Auto,-@{Rangedweaponfull}}*?{Firing Mode?|Normal,1|Overcharge,2|Maximal,3|Overload,4}]]"> <span data-i18n="hit-u">Hit</span> </button></div>
+							<div class="sheet-item" style="width: 70%;"><input name="attr_Rangedweaponspecial" type="text" /></div>
+							<div class="sheet-item sheet-redbgns" style="width: 15%;"><button name="roll_Rangeddamage" type="roll" value="/me does [[@{Rangedweapondamage}]] damage! (Pen: @{Rangedweaponpen}) with @{Rangedweaponname}"> <span data-i18n="damage-u">Damage</span> </button></div>
 						</div>
 					</div>
 				</fieldset>
@@ -3648,12 +3604,12 @@
 							</div>
 							<div class="sheet-item" style="width: 10%;"><span data-i18n="penetration-u">Pen:</span></div>
 							<div class="sheet-item" style="width: 10%;"><input name="attr_meleeweaponpen" type="text" value="0" style="text-align: center;"/></div>
-							<div class="sheet-item sheet-redbgns" style="width: 15%;"><button name="roll_meleedamage" type="roll" value="/me does [[@{meleeweapondamage}+@{UnS}+(floor(@{strength}/10))]] damage! (Pen: @{meleeweaponpen}) with @{meleeweaponname}"> <span data-i18n="damage-u">Damage</span> </button></div>
+							<div class="sheet-item sheet-redbgns" style="width: 15%;"><button name="roll_meleehit" type="roll" value="!roll40k @{character_name}, @{WeaponSkill}, [[(?{Aim | Half aim (+10),+10| No aim (+0),+0| Full aim (+20),+20} + ?{Attack Type | All out (+30),+30| Charge (+20),+20| Standard (+10),+10| Swift Attack (+0),+0| Lighting (-10),-10} + ?{Modifier|0})]]"> <span data-i18n="hit-u">Hit</span> </button></div>
 						</div>
 						<div class="sheet-row">
 							<div class="sheet-item" style="width: 15%;"><span data-i18n="special-u">Special:</span></div>
-							<div class="sheet-item" style="width: 76%;"><input name="attr_meleeweaponspecial" type="text" /> </div>
-							<div class="sheet-item sheet-redbgns" style="width: 9%;"><button name="roll_meleehit" type="roll" value="!roll40k @{character_name}, @{WeaponSkill}, [[(?{Aim | Half aim (+10),+10| No aim (+0),+0| Full aim (+20),+20} + ?{Attack Type | All out (+30),+30| Charge (+20),+20| Standard (+10),+10| Swift Attack (+0),+0| Lighting (-10),-10} + ?{Modifier|0})]]"> <span data-i18n="hit-u">Hit</span> </button></div>
+							<div class="sheet-item" style="width: 70%;"><input name="attr_meleeweaponspecial" type="text" /> </div>
+							<div class="sheet-item sheet-redbgns" style="width: 15%;"><button name="roll_meleedamage" type="roll" value="/me does [[@{meleeweapondamage}+@{UnS}+(floor(@{strength}/10))]] damage! (Pen: @{meleeweaponpen}) with @{meleeweaponname}"> <span data-i18n="damage-u">Damage</span> </button></div>
 						</div>
 					</div>
 				</fieldset>
@@ -3743,8 +3699,8 @@
 						</div>
 						<div class="sheet-row">
 							<div class="sheet-item" style="width: 15%;"><span data-i18n="special-u">Special:</span></div>
-							<div class="sheet-item" style="width: 76%;"><input name="attr_daemonweaponspecial" type="text" /></div>
-							<div class="sheet-item sheet-redbgns" style="width: 9%;"><button name="roll_Daemonhit" type="roll" value="/me uses @{Daemonweaponname} [[1d100]] Target [[@{BallisticSkill} +[[ ?{Aim | Half aim (+10),+10| No aim (+0),+0 | Full aim (+20),+20} + ?{Range | Point Blank (+30),+30 | Short Range (+10),+10 | Standard range (+0),+0 | Long Range (-10),-10 | Extreme Range (-30),-30} + ?{Rate of Fire/Attack Type|Standard (+10),+10 | Semi auto (+0),+0 | Full Auto (-10),-10 | Called Shot (-20),-20 | Suppressing Fire (-20),-20} + ?{Modifier|0} ]]]]."> <span data-i18n="hit-u">Hit</span> </button></div>
+							<div class="sheet-item" style="width: 70%;"><input name="attr_daemonweaponspecial" type="text" /></div>
+							<div class="sheet-item sheet-redbgns" style="width: 15%;"><button name="roll_Daemonhit" type="roll" value="/me uses @{Daemonweaponname} [[1d100]] Target [[@{BallisticSkill} +[[ ?{Aim | Half aim (+10),+10| No aim (+0),+0 | Full aim (+20),+20} + ?{Range | Point Blank (+30),+30 | Short Range (+10),+10 | Standard range (+0),+0 | Long Range (-10),-10 | Extreme Range (-30),-30} + ?{Rate of Fire/Attack Type|Standard (+10),+10 | Semi auto (+0),+0 | Full Auto (-10),-10 | Called Shot (-20),-20 | Suppressing Fire (-20),-20} + ?{Modifier|0} ]]]]."> <span data-i18n="hit-u">Hit</span> </button></div>
 						</div>
 						<div class="sheet-row">
 							<div class="sheet-item" style="width: 20%;"><span data-i18n="attributes-u">Attributes:</span></div>
@@ -3921,29 +3877,47 @@ on("change:repeating_rangedweapons", function() {
    });
 });
 
-
-
+function sanitizeToNumber(input) {
+    let num = 0;
+    if (typeof input !== 'number' && typeof input !== 'string') {
+        return num;
+    }
+    if (typeof input === 'string') {
+        num = parseInt(input, 10);
+    } else {
+        num = input;
+    }
+    return num;
+}
 function calcAdvExp() {
-    getSectionIDs("repeating_advancements", (sectionIDs) => {
+    getSectionIDs('repeating_advancements', (sectionIDs) => {
         let repeatingValues = [];
+        let staticValues = [];
         for(let a = 0; a < sectionIDs.length; a++) {
-            repeatingValues.push(`repeating_advancements_${sectionIDs[a]}_advancement1rexp}`)
-            repeatingValues.push(`repeating_advancements_${sectionIDs[a]}_advancement2rexp}`)
-            repeatingValues.push(`repeating_advancements_${sectionIDs[a]}_advancement3rexp}`)
+            repeatingValues.push(`repeating_advancements_${sectionIDs[a]}_advancement1rexp`);
+            repeatingValues.push(`repeating_advancements_${sectionIDs[a]}_advancement2rexp`);
+            repeatingValues.push(`repeating_advancements_${sectionIDs[a]}_advancement3rexp`);
         }
-        console.log(repeatingValues);
-        getAttrs(repeatingValues, (values) => {
-            //setAttrs({
-            //    repeating_spells_SpellDamage: Math.floor(values.repeating_spells_SpellLevel / 2) + 10
-            //});
-            console.log('Values get');
-            console.log(JSON.stringify(values));
+        staticValues.push('exptotal');
+        getAttrs(staticValues, (values1) => {
+            getAttrs(repeatingValues, (values2) => {
+                const keys = Object.keys(values2);
+                let sum = 0;
+                for (let a = 0; a < keys.length; a++) {
+                    sum += sanitizeToNumber(values2[keys[a]]);
+                }
+                setAttrs({
+                    expspent: sum,
+                    exptoSpend: values1['exptotal'] - sum
+                });
+            });
         });
     });
 }
-on('change:repeating_advancements', () => {
+on('change:repeating_advancements change:exptotal', () => {
     calcAdvExp();
 });
+
 
 
 </script>

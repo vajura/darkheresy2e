@@ -17,14 +17,7 @@ var Roll40k = Roll40k || (function(){
         var modTarget = parseInt(attribute) + parseInt(modifier);
         var output1 = token + ' has a modified target of <B>' + modTarget + '</B> and rolled a <B>' + roll + '</B>. ';
         var output2, degOfSuc;
-        //Form output message based on result
-        if (roll === 1) {
-            output2 = '<span style="color:green">' + token + ' rolled a 1 and automatically succeeds by <B>1 degree</B>.</span>';
-        }
-        else if (roll === 100) {
-            output2 = '<span style="color:red">' + token + ' rolled a 100 and automatically fails by <B>1 degree</B>.</span>';
-        }
-        else if (roll <= modTarget) {
+        if (roll <= modTarget) {
             degOfSuc = (Math.floor(modTarget / 10) - Math.floor(roll / 10)) + 1;
             output2 = '<span style="color:green">' + token + ' succeeds by <B>' + degOfSuc + ' degree(s)</B>.</span>';
         }
